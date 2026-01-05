@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rrcauilets6d"]
+
+[ext_resource type="Script" uid="uid://byvy6hl5xapll" path="res://scripts/bullet.gd" id="1_fh0yl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5qli"]
+radius = 6.0827627
+
+[node name="bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_fh0yl")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o5qli")
+debug_color = Color(0.81372935, 0.0020451718, 0.9804626, 0.41960785)
