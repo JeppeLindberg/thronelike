@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbl44rkp8in1r"]
+
+[ext_resource type="Script" uid="uid://cshbaalkdq63r" path="res://scripts/ground_item.gd" id="1_qge35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmurc"]
+radius = 7.0
+
+[node name="ground_item" type="RigidBody2D" node_paths=PackedStringArray("pickup_visual")]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_qge35")
+pickup_visual = NodePath("pickup_visual")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fmurc")
+debug_color = Color(0.6223011, 0.52623963, 0.25574398, 0.41960785)
+
+[node name="item_container" type="Node2D" parent="."]
+
+[node name="pickup_visual" type="Node2D" parent="."]
+
+[node name="E" type="Label" parent="pickup_visual"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1

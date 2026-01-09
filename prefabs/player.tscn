@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://g0b2k48d8cym"]
+[gd_scene load_steps=6 format=3 uid="uid://g0b2k48d8cym"]
 
 [ext_resource type="Script" uid="uid://bdpodbx5yt0nt" path="res://scripts/player.gd" id="1_72ieh"]
+[ext_resource type="Texture2D" uid="uid://c57etjq8lbbgd" path="res://sprites/white.png" id="2_4dohe"]
+[ext_resource type="PackedScene" uid="uid://rrcauilets6d" path="res://prefabs/bullet.tscn" id="2_r66lb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sgp6g"]
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r66lb"]
+radius = 15.132746
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("ground_item_scanner")]
 script = ExtResource("1_72ieh")
+ground_item_layer = 4
+bullet_prefab = ExtResource("2_r66lb")
+ground_item_scanner = NodePath("ground_item_scanner")
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sgp6g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.18677688, 0.18677688)
+texture = ExtResource("2_4dohe")
+
+[node name="ground_item_scanner" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r66lb")
+disabled = true
