@@ -10,9 +10,26 @@ scale = Vector2(0.41408342, 0.41408342)
 script = ExtResource("1_r1d3o")
 bullet_prefab = ExtResource("2_k7dr5")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="weapon_pistol" type="Node2D" parent="."]
+script = ExtResource("3_sa45d")
+
+[node name="ui_visual" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="ui_visual"]
 scale = Vector2(0.77619123, 0.20048957)
 texture = ExtResource("2_d8io5")
 
-[node name="weapon_pistol" type="Node2D" parent="."]
-script = ExtResource("3_sa45d")
+[node name="reload_progress" type="Label" parent="ui_visual"]
+offset_left = -19.319778
+offset_top = 12.074862
+offset_right = 20.680222
+offset_bottom = 35.07486
+text = "0.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ground_item_visual" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="ground_item_visual"]
+scale = Vector2(0.77619123, 0.20048957)
+texture = ExtResource("2_d8io5")

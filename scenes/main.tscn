@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0a5kdluttkfm"]
+[gd_scene load_steps=9 format=3 uid="uid://d0a5kdluttkfm"]
 
 [ext_resource type="PackedScene" uid="uid://g0b2k48d8cym" path="res://prefabs/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://ca28518m1e3ck" path="res://scripts/mouse_follower.gd" id="1_sugp2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bbl44rkp8in1r" path="res://prefabs/ground_item.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://c4lav48ipis5a" path="res://prefabs/pistol.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://c5h4tkssfqmik" path="res://scripts/follow_canvas_control.gd" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://c57etjq8lbbgd" path="res://sprites/white.png" id="8_tipki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
 bg_color = Color(0.6, 0.6, 0.6, 0.33333334)
@@ -51,28 +50,13 @@ position = Vector2(89, 39)
 script = ExtResource("7_o6xl0")
 target_control = NodePath("../../ui_canvas/ui_control/player")
 
-[node name="test" type="Sprite2D" parent="ui/player"]
-self_modulate = Color(1, 0.3254902, 1, 1)
-scale = Vector2(0.08106251, 0.08106251)
-texture = ExtResource("8_tipki")
-
 [node name="weapon_1" type="Node2D" parent="ui/player" node_paths=PackedStringArray("target_control")]
 script = ExtResource("7_o6xl0")
 target_control = NodePath("../../../ui_canvas/ui_control/player/weapons/weapon_1/pivot")
 
-[node name="test" type="Sprite2D" parent="ui/player/weapon_1"]
-self_modulate = Color(1, 0.3254902, 1, 1)
-scale = Vector2(0.08106251, 0.08106251)
-texture = ExtResource("8_tipki")
-
 [node name="weapon_2" type="Node2D" parent="ui/player" node_paths=PackedStringArray("target_control")]
 script = ExtResource("7_o6xl0")
 target_control = NodePath("../../../ui_canvas/ui_control/player/weapons/weapon_2/pivot")
-
-[node name="test" type="Sprite2D" parent="ui/player/weapon_2"]
-self_modulate = Color(1, 0.3254902, 1, 1)
-scale = Vector2(0.08106251, 0.08106251)
-texture = ExtResource("8_tipki")
 
 [node name="ui_canvas" type="CanvasLayer" parent="."]
 
